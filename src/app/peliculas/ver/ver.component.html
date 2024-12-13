@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1 class="text-center">Detalles De La Pelicula</h1>
+  <div class="card">
+      <div class="card-body">
+          <h5 class="card-title">{{pelicula?.nombre}}</h5>
+          <p class="card-text"><strong>ID:</strong> {{pelicula?.id}}</p>
+          <p class="card-text"><strong>Director:</strong> {{pelicula?.director}}</p>
+          <p class="card-text"><strong>Año de publicación:</strong> {{pelicula?.anio_publicacion}}</p>
+          <p class="card-text"><strong>Genero:</strong> {{pelicula?.genero}}</p>
+          <p class="card-text"><strong>Usuario Creación:</strong> {{pelicula?.id_user}}</p>
+
+      </div>
+      <div class="button-container">
+          <button type="button" class="btn btn-danger" (click)="eliminarPelicula()" >Eliminar</button>
+          <button type="button" class="btn btn-info" [routerLink]="['/peliculas/actualizar', pelicula?.id]">Editar</button>
+      </div>
+  </div>
+</div>
+
+

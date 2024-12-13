@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Director</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Ver</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- mostrar peliculas -->
+    <tr *ngFor="let peliculas of pelicula">
+      <th scope="row">{{peliculas.id}}</th>
+      <td>{{peliculas.nombre}}</td>
+      <td>{{peliculas.director}}</td>
+      <td>{{peliculas.genero}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" [routerLink]="['/peliculas/ver', peliculas.id]">Ver...</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

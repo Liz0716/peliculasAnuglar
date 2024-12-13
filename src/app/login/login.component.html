@@ -1,0 +1,30 @@
+<div class="login-container">
+  <div class="login-image">
+    <img
+      src="assets/imagen.png"
+    />
+  </div>
+  <div class="login-form">
+    <form class="custom-form" [formGroup]="Formulario" (ngSubmit)="login()">
+      <h1>Ingresa 🎬</h1>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        required
+      />
+      <button type="submit" [disabled]="Formulario.invalid">Login</button>
+    </form>
+
+
+    <div class="registro">
+      <button class="registro" (click)="registro()">Registrar</button>
+    </div>
+  </div>
+</div>

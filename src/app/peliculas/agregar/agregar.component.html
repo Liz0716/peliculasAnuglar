@@ -1,0 +1,44 @@
+<div class="container">
+  <form [formGroup]="Formulario" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" formControlName="nombre"
+        [ngClass]="{ 'is-invalid': f['nombre'].invalid && f['nombre'].touched }" />
+      <div class="invalid-feedback">
+        <small *ngIf="f['nombre'].errors?.['required']">Se requiere el nombre</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Director</label>
+      <input type="text" class="form-control" formControlName="director"
+        [ngClass]="{ 'is-invalid': f['director'].invalid && f['director'].touched }" />
+      <div class="invalid-feedback">
+        <small *ngIf="f['director'].errors?.['required']">Se requiere el director</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Año de Publicación</label>
+      <input type="number" class="form-control" formControlName="anio_publicacion"
+        [ngClass]="{ 'is-invalid': f['anio_publicacion'].invalid && f['anio_publicacion'].touched }" />
+      <div class="invalid-feedback">
+        <small *ngIf="f['anio_publicacion'].errors?.['required']">El año de publicación es obligatorio</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+    <label class="form-label">Genero</label>
+    <select class="form-select"  aria-label="Default select example" formControlName="id_genero">
+      <option selected>Selecciona un Genero 🫣</option>
+      @for (genero of generos; track $index) {
+        <option [value]="genero.id">{{genero.nombre}}</option>
+      }
+    </select>
+   </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="Formulario.invalid">Agregar Pelicula</button>
+  </form>
+</div>
+
